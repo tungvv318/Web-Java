@@ -60,17 +60,17 @@
 		<div class="header-bottom">
 				<div class="container">
 					<ul class="header-nav">
-						<li><a href="#">Trang chủ</a></li>
+						<li><a href="#" class="current-nav">Trang chủ</a></li>
 						<li>
-							<a href="#">Sản phẩm</a>
-							<ul class="sub-product">
+							<a class="current-nav" href="#">Sản phẩm</a>
+							<ul class="header-sub-nav">
 								<li><a href="#">Sản phẩm 1</a></li>
 								<li><a href="#">Sản phẩm 2</a></li>
 								<li><a href="#">Sản phẩm 3</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Giới thiệu</a></li>
-						<li><a href="#">Liên hệ</a></li>
+						<li><a href="#" class="current-nav">Giới thiệu</a></li>
+						<li><a href="#" class="current-nav">Liên hệ</a></li>
 
 					</ul>
 				</div>	
@@ -78,7 +78,35 @@
 	</div>
 
 	<div class="content">
-		<div class="container"></div>
+		<div class="container">
+			<div class="clearfix">
+				<h2 class="page-title">Đăng Nhập</h2>
+				<ul class="page-control">
+					<li class="page-control-item"><a href="#">Home</a></li>
+					<li>Đăng nhập</li>
+				</ul>
+			</div>
+			<table class="content-login">
+				<tr>
+					<td>
+						<h1 class="page-title">Đăng nhập</h1>
+					</td>
+				</tr>
+				<tr>
+					<td class="name-input">Email address*</td>
+					<td><input type="text" class="input-login"></td>
+				</tr>
+				<tr>
+					<td class="name-input">Password*</td>
+					<td><input type="text" class="input-login"></td>
+				</tr>
+				<tr>
+					<td>
+						<input type="submit" value="Login" id="btn-login">
+					</td>
+				</tr>
+			</table>
+		</div>
 	</div>	
 </body>
 </html>
