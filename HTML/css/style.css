@@ -243,3 +243,94 @@ a{
 #btn-login:hover{
 	background-color: #3276b1;
 }
+.footer{
+	margin-top: 35px;
+	font-size: 13px;
+}
+.footer-top{
+	padding-top: 70px;
+	height: 330px;
+	background: #172431;
+}
+.footer-bottom{
+	height: 50px;
+}
+.information{
+	padding-left: 110px;
+}
+.contact{
+	padding-left: 110px;
+}
+.subscribe{
+	padding-left: 80px;
+	width: 173px;
+}
+.container-flex-bot{
+	display: flex;
+}
+.info-title{
+	font-weight: 100;
+	color: #adbac8;
+	margin-bottom: 22px;
+}
+.information-sub li{
+	margin-bottom: 10px;
+}
+.information-sub li a{
+	color: #7b8fa3;
+	font-size: 13px;
+}
+.information-sub li a:hover{
+	color: #f90;
+}
+.information-sub li i{
+	color: #f90;
+    margin-right: 5px;
+    font-size: 10px
+}
+.contact i{
+	color: #f90;
+    font-size: 28px;
+    position: absolute;
+}
+.font-size-p{
+	font-size: 14px;
+	margin: 0 0 10px;
+	color: #7b8fa3;
+	padding-left: 34px;
+}
+.contact-sub{
+	position: relative;
+	padding-left: 35px;
+}
+#input-subscribe{
+	border: 1px solid #4e5862;
+	background: #232f3c;
+	height: 37px;
+	width: 100%;
+	margin-bottom: 5px;
+	
+}
+.btn-subscribe i{
+	margin-left: 5px;
+    font-size: 10px;
+    color: #f90;	
+}
+.btn-subscribe{
+	background: none;
+    border: 1px solid #4e5862;
+    color: #adbac8;
+    height: 37px;
+    padding: 0 15px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+.footer-bottom{
+	background: #1a1a1a;
+	display: flex;
+	align-items: center;
+}
+.footer-bottom p{
+	font-size: 14px;
+	color: #fff;
+}
