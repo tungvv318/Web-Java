@@ -13,8 +13,12 @@ public class UserServiceImpl implements UserService{
 	public void insertUser(User user) {
 		userRepository.insertUser(user);
 	}
-	public User searchUser(User user) {
+	public User searchUserInDatabase(User user) {
 		return userRepository.searchUserInDatabase(user);
+	}
+	@Override
+	public User searchUserByEmail(String email) {
+		return userRepository.searchUserByEmail(email);
 	}
 
 }

@@ -92,7 +92,7 @@
 					<li>Đăng nhập</li>
 				</ul>
 			</div>
-			<form action="/BookWebMVC/formLogin" method="POST">
+			<form:form action="/BookWebMVC/formLogin" method="POST" modelAttribute="user">
 				<table class="content-login">
 					<tr>
 						<td>
@@ -100,16 +100,34 @@
 						</td>
 					</tr>
 					<tr>
-						<td class="name-input">Email address*</td>
+						<spring:bind path="email">
+								<div class="form-group ${status.error ? 'has-error' : ''}">
+								<td class="name-input">Email*</td>
+								<td>
+									<form:input path="email" type="email" cssClass="input-login" required="required"/>
+									<form:errors path="email" cssClass="has-error"/>
+								</td>
+							</div>	
+						</spring:bind>
+						<!-- <td class="name-input">Email address*</td>
 						<td>
 							<input type="Email" class="input-login" name="emailUser" required/>
-						</td>
+						</td> -->
 					</tr>
 					<tr>
-						<td class="name-input">Password*</td>
+						<spring:bind path="password">
+							<div class="form-group ${status.error ? 'has-error' : ''}">
+								<td class="name-input">Password*</td>
+								<td>
+									<form:password path="password" cssClass="input-login" required="required"/>
+									<form:errors path="password" cssClass="has-error"/>
+								</td>
+							</div>	
+						</spring:bind>
+						<!-- <td class="name-input">Password*</td>
 						<td>
 							<input type="Password" class="input-login" name="passwordUser" required/>
-						</td>
+						</td> -->
 					</tr>
 					<tr>
 						<td>
@@ -117,7 +135,7 @@
 						</td>
 					</tr>
 				</table>
-			</form>
+			</form:form>
 			
 		</div>
 	</div>	

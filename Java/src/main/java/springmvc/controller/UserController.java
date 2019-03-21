@@ -37,6 +37,7 @@ public class UserController {
 	}
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(ModelMap model) {
+		model.addAttribute("user", new User(null, null));
 		return "login";
 	}
 	@RequestMapping(value = "/formSignUp", method = RequestMethod.POST)
@@ -49,18 +50,21 @@ public class UserController {
 			userService.insertUser(user);
 			model.addAttribute("nameUser", user.getName());
 			return "loginsuccess";
+			
 		}
 	}
 	@RequestMapping(value = "/formLogin", method = RequestMethod.POST)
-	public String handleLogin(ModelMap model, @RequestParam(name="emailUser") String email, @RequestParam(name="passwordUser") String password) {
-		// đang bị lỗi nếu không tìm được user
-		User user = userService.searchUser(new User(email, password));
-		if(user != null) {
-			model.addAttribute("nameUser", user.getName());
-			return "loginsuccess";
+	public String handleLogin(@ModelAttribute("user") @Validated User user,
+			BindingResult result, Model model) {
+		// kiểm tra email và pass ở dưới database, đúng thì cho đăng nhập sai thì thôi
+		
+		if(result.hasErrors()) {
+			return "login";
 		}
 		else {
-			return "NewFile";
+			User userFind = userService.searchUserInDatabase(user);
+			model.addAttribute("nameUser", user.getName());
+			return "loginsuccess";
 		}
 	}
 	

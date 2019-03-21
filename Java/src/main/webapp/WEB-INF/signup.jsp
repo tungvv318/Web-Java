@@ -107,18 +107,26 @@
 						</td>
 					</tr>
 					<tr>
-						<td class="name-input">Email address*</td>
+						<spring:bind path="email">
+							<div class="form-group ${status.error ? 'has-error' : ''}">
+								<td class="name-input">Email*</td>
+								<td>
+									<form:input path="email" type="email" cssClass="input-register" required="required"/>
+									<form:errors path="email" cssClass="has-error"/>
+								</td>
+							</div>	
+						</spring:bind>
+						
+						<%--  <td class="name-input">Email address*</td>
 						<td>
 							<form:input path="email"  type="email"  cssClass="input-register" required="required"/>
-							<form:errors path="email"/>
-						</td>							
+						</td> --%>	 				
 					</tr>
 					
 					<tr>
 						<td class="name-input">Fullname*</td>
 						<td>
 							<form:input path="name" cssClass="input-register" required="required"/>
-							<form:errors path="name"/>
 						</td>						
 					</tr>
 					<tr>
@@ -131,7 +139,7 @@
 								<td class="name-input">Phone*</td>
 								<td>
 									<form:input path="phone" cssClass="input-register" required="required"/>
-									<form:errors path="phone"/>
+									<form:errors path="phone" cssClass="has-error"/>
 								</td>
 							</div>	
 						</spring:bind>
@@ -144,7 +152,7 @@
 								<td class="name-input">Password*</td>
 								<td>
 									<form:password path="password" cssClass="input-register" required="required"/>
-									<form:errors path="password"/>
+									<form:errors path="password" cssClass="has-error"/>
 								</td>
 							</div>	
 						</spring:bind>
@@ -157,7 +165,7 @@
 								<td class="name-input">Re password*</td>
 								<td>
 									<form:password path="rePassword" cssClass="input-register" required="required"/>
-									<form:errors path="rePassword"/>
+									<form:errors path="rePassword" cssClass="has-error"/>
 								</td>
 							</div>	
 						</spring:bind>

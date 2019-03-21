@@ -33,7 +33,7 @@
 							<i class="fas fa-user"></i>${nameUser}
 						</a>
 					</li>
-					<li><a href="#">Đăng xuất</a></li>
+					<li><a href="#">Đăng xuất</a></li>									
 				</ul>
 			</div>	
 		</div>

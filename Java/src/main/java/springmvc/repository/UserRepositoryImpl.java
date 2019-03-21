@@ -26,14 +26,28 @@ public class UserRepositoryImpl implements UserRepository{
 
 	public User searchUserInDatabase(User user) {
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(User.class);
-		// câu lệnh and
+		// câu lệnh and kết hợp 2 điều kiện
 		SimpleExpression email = Restrictions.eq("email", user.getEmail());
 		SimpleExpression pass = Restrictions.eq("password", user.getPassword());
 		LogicalExpression parameter = Restrictions.and(email, pass);
 		criteria.add(parameter);
-		// lấy điều kiện contactNumber
 		List<User> users = criteria.list();
-		return users.get(0);
+		if(users.size() != 0) {
+			return users.get(0);
+		}
+		return null;
+	}
+
+	
+	@Override
+	public User searchUserByEmail(String email) {
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(User.class);
+		criteria.add(Restrictions.eq("email", email));
+		List<User> users = criteria.list();
+		if(users.size() != 0) {
+			return users.get(0);
+		}
+		return null;
 	}
 
 }
