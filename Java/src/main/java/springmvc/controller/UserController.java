@@ -66,7 +66,7 @@ public class UserController {
 	@RequestMapping(value = "/formLogin", method = RequestMethod.POST)
 	public String handleLogin(@ModelAttribute("user") @Validated User user, BindingResult result, Model model,
 			HttpServletRequest request) {
-		// kiểm tra email và pass ở dưới database, đúng thì cho đăng nhập sai thì thôi
+		// kiểm tra email và pass ở dưới database, đúng thì cho đăng nhập sai thì hiển thị lỗi
 
 		if (result.hasErrors()) {
 			return "login";
