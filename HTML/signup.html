@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="css/signup.css">
 </head>
 <body>
 	<div class="header">
@@ -88,42 +88,44 @@
 					<li>Đăng kí</li>
 				</ul>
 			</div>
-			<table class="content-login">
-				<tr>
-					<td>
-						<h1 class="page-title">Đăng kí</h1>
-					</td>
-				</tr>
-				<tr>
-					<td class="name-input">Email address*</td>
-					<td><input type="text" class="input-login"></td>
-				</tr>
-				<tr>
-					<td class="name-input">Fullname*</td>
-					<td><input type="text" class="input-login"></td>
-				</tr>
-				<tr>
-					<td class="name-input">Address*</td>
-					<td><input type="text" class="input-login"></td>
-				</tr>
-				<tr>
-					<td class="name-input">Phone*</td>
-					<td><input type="text" class="input-login"></td>
-				</tr>
-				<tr>
-					<td class="name-input">Password*</td>
-					<td><input type="text" class="input-login"></td>
-				</tr>
-				<tr>
-					<td class="name-input">Re password*</td>
-					<td><input type="text" class="input-login"></td>
-				</tr>
-				<tr>
-					<td>
-						<input type="submit" value="Register" id="btn-login">
-					</td>
-				</tr>
-			</table>
+			<form action="/">
+				<table class="content-register">
+					<tr>
+						<td>
+							<h1 class="page-title">Đăng kí</h1>
+						</td>
+					</tr>
+					<tr>
+						<td class="name-input">Email address*</td>
+						<td><input type="Email" class="input-register" required></td>
+					</tr>
+					<tr>
+						<td class="name-input">Fullname*</td>
+						<td><input type="text" class="input-register" required></td>
+					</tr>
+					<tr>
+						<td class="name-input">Address*</td>
+						<td><input type="text" class="input-register" required></td>
+					</tr>
+					<tr>
+						<td class="name-input">Phone*</td>
+						<td><input type="number" class="input-register" required></td>
+					</tr>
+					<tr>
+						<td class="name-input">Password*</td>
+						<td><input type="password" class="input-register" required></td>
+					</tr>
+					<tr>
+						<td class="name-input">Re password*</td>
+						<td><input type="password" class="input-register" required></td>
+					</tr>
+					<tr>
+						<td>
+							<input type="submit" value="Register" id="btn-register">
+						</td>
+					</tr>
+				</table>
+			</form>
 		</div>
 	</div>	
 
