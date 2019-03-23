@@ -17,14 +17,21 @@ public class UserFormValidator implements Validator {
 		return User.class.equals(clazz);
 	}
 
-	// hàm kiểm tra số phone nhập vào có đúng 10 ký tự hay không?
-	public boolean checkPhone(String s) {
-		if (s.length() != 10) {
+	/**
+	 * hàm kiểm tra số phone nhập vào có đúng 10 ký tự và là số hay không?
+	 * 
+	 * @param phone
+	 * @return: true nếu thỏa mãn, false nếu không thỏa mãn
+	 */
+	private boolean checkPhone(String phone) {
+		// kiểm tra độ dài của phone
+		if (phone.length() != 10) { 
 			return false;
 		} else {
-			for (int i = 0; i < s.length(); i++) {
-				char check = s.charAt(i);
-				if (!(check >= 48 && check <= 57)) {
+			for (int i = 0; i < phone.length(); i++) {
+				char check = phone.charAt(i);
+				// kiểm tra từng kí tự trong phone có phải là chữ hay không
+				if (!(check >= 48 && check <= 57)) { 
 					return false;
 				}
 			}
@@ -32,9 +39,14 @@ public class UserFormValidator implements Validator {
 		return true;
 	}
 
-	// hàm kiểm tra số ký tự của password có đúng hơn 6 ký tự hay không?
-	public boolean checkLengthOfPassword(String s) {
-		if (s.length() < 6) {
+	/**
+	 * hàm kiểm tra pass word nhập vào có độ dài >= 6 hay không?
+	 * 
+	 * @param password
+	 * @return: true nếu thỏa mãn, false nếu không thỏa mãn
+	 */
+	private boolean checkLengthOfPassword(String password) {
+		if (password.length() < 6) { // kiểm tra độ dài của password
 			return false;
 		}
 		return true;
@@ -43,7 +55,8 @@ public class UserFormValidator implements Validator {
 	public void validate(Object target, Errors errors) {
 		User user = (User) target;
 		/*
-		 * lấy rePassword là điều kiện so sánh vì khi đăng nhập chỉ tìm user dựa trên email và password
+		 * lấy rePassword là điều kiện so sánh vì khi đăng nhập chỉ tìm user dựa trên
+		 * email và password
 		 */
 		if (user.getRePassword() != null) {
 			if (!user.getPassword().equals(user.getRePassword())) {
