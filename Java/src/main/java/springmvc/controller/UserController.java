@@ -55,8 +55,8 @@ public class UserController {
 		} else {
 			userService.insertUser(user);
 			HttpSession session = request.getSession();
-			session.setAttribute("user", user);
-			model.addAttribute("nameUser", user.getName());
+			session.setAttribute("userName", user.getName());
+			model.addAttribute("userName", user.getName());
 			return "loginsuccess";
 
 		}
@@ -71,10 +71,11 @@ public class UserController {
 		if (result.hasErrors()) {
 			return "login";
 		} else {
-			HttpSession session = request.getSession();
-			session.setAttribute("user", user);
+			
 			User userFind = userService.searchUserInDatabase(user);
-			model.addAttribute("nameUser", user.getName());
+			HttpSession session = request.getSession();
+			session.setAttribute("userName", userFind.getName());
+			model.addAttribute("userName", userFind.getName());
 			return "loginsuccess";
 		}
 	}

@@ -30,7 +30,7 @@
 				<ul class="header-menu">
 					<li>
 						<a href="#">
-							<i class="fas fa-user"></i>${nameUser}
+							<i class="fas fa-user"></i>${userName}
 						</a>
 					</li>
 					<li><a href="#">Đăng xuất</a></li>									
