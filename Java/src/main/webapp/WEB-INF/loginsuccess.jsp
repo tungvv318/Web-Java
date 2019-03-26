@@ -40,8 +40,8 @@
 		<div class="header-mid">
 			<div class="container container-flex">
 				<div class="hero-img">
-					<a href="#">
-						<img src="img/logo-cake.png" alt="cake">
+					<a href="/BookWebMVC/index">
+						<img src="<c:url value="/resource/img/book-logo.png" />" alt="book logo">
 					</a>
 				</div>
 				<div class="header-mid-right">
@@ -66,7 +66,7 @@
 		<div class="header-bottom">
 				<div class="container">
 					<ul class="header-nav">
-						<li><a href="#" class="current-nav">Trang chủ</a></li>
+						<li><a href="/BookWebMVC/index" class="current-nav">Trang chủ</a></li>
 						<li>
 							<a class="current-nav" href="#">Sản phẩm</a>
 							<ul class="header-sub-nav">
@@ -152,16 +152,16 @@
 				<p class="pull-left">Privacy policy. (©) 2014</p>
 				<p class="pull-right">
 					<a href="#">
-						<img src="img/rectangle.jpg" alt="linhtinh">
+						<img src="<c:url value="/resource/img/rectangle.jpg" />" alt="linhtinh">
 					</a>
 					<a href="#">
-						<img src="img/rectangle.jpg" alt="linhtinh">
+						<img src="<c:url value="/resource/img/rectangle.jpg" />" alt="linhtinh">
 					</a>
 					<a href="#">
-						<img src="img/rectangle.jpg" alt="linhtinh">
+						<img src="<c:url value="/resource/img/rectangle.jpg" />" alt="linhtinh">
 					</a>
 					<a href="#">
-						<img src="img/rectangle.jpg" alt="linhtinh">
+						<img src="<c:url value="/resource/img/rectangle.jpg" />" alt="linhtinh">
 					</a>
 				</p>
 			</div>

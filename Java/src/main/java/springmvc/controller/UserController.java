@@ -1,5 +1,7 @@
 package springmvc.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -16,13 +18,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import springmvc.validator.UserFormValidator;
+import springmvc.model.Category;
 import springmvc.model.User;
+import springmvc.service.ProductService;
 import springmvc.service.UserService;
 
 @Controller
 public class UserController {
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private ProductService productService;
 	@Autowired
 	UserFormValidator userFormValidator;
 
@@ -31,6 +37,12 @@ public class UserController {
 		binder.setValidator(userFormValidator);
 	}
 
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String homePage(ModelMap model) {
+		List<Category> lstCategory = productService.getListCategory();
+		model.addAttribute("lstCategory", lstCategory);
+		return "index";
+	}
 	/**
 	 * hàm dùng để vào trang đăng kí
 	 * 
@@ -45,7 +57,10 @@ public class UserController {
 		 * 
 		 * - phải thêm user rỗng để dùng được validation
 		 */
+
 		model.addAttribute("user", new User());
+		List<Category> lstCategory = productService.getListCategory();
+		model.addAttribute("lstCategory", lstCategory);
 		return "signup";
 	}
 
@@ -64,6 +79,8 @@ public class UserController {
 		 * - phải thêm user rỗng để dùng được validation
 		 */
 		model.addAttribute("user", new User(null, null));
+		List<Category> lstCategory = productService.getListCategory();
+		model.addAttribute("lstCategory", lstCategory);
 		return "login";
 	}
 

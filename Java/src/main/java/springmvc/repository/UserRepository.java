@@ -1,5 +1,4 @@
 package springmvc.repository;
-
 import springmvc.model.User;
 
 public interface UserRepository {
@@ -30,4 +29,6 @@ public interface UserRepository {
 	 *          đăng kí dưới database
 	 */
 	User searchUserByEmail(String email);
+	
+	
 }

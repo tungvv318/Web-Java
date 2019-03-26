@@ -46,12 +46,13 @@ public class UserFormValidator implements Validator {
 	 * @return: true nếu thỏa mãn, false nếu không thỏa mãn
 	 */
 	private boolean checkLengthOfPassword(String password) {
-		if (password.length() < 6) { // kiểm tra độ dài của password
+		int lengthOfPassword = password.length();
+		if (lengthOfPassword < 6 || password.length() > 30) { // kiểm tra độ dài của password
 			return false;
 		}
 		return true;
 	}
-
+			
 	public void validate(Object target, Errors errors) {
 		User user = (User) target;
 		/*

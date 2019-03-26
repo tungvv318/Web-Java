@@ -34,7 +34,6 @@ a{
 }
 .header-contact{
 	display: flex;
-
 }
 
 
@@ -76,7 +75,7 @@ a{
   	text-decoration: inherit;
 }
 .header-top a:hover{
-	color: red;
+	color: black;
 }
 .header-mid{
 	margin: 30px 0 0px;
@@ -100,6 +99,7 @@ a{
     bottom: 0;
     border: none;
     background: none;
+    cursor: pointer;
 }
 #form-search{
 	width: 218px;
@@ -189,6 +189,22 @@ a{
 }
 .header-nav a:hover{
 	background: rgb(58, 92, 131);
+}
+.sub-list{
+	position: relative;
+}
+.sub-product{
+	position: absolute;
+	display: none;
+	left: 100%;
+	top: 0;
+	background: #fff;
+	min-width:200px;
+	transition: width 2s;
+	box-shadow: 0px 5px 19px 0px rgba(0,0,0,0.75);
+}
+.sub-list:hover .sub-product{
+	display: block;
 }
 .clearfix{
 	margin-top: 26px;
