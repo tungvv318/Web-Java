@@ -38,9 +38,10 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String homePage(ModelMap model) {
+	public String homePage(ModelMap model, HttpServletRequest request) {
 		List<Category> lstCategory = productService.getListCategory();
 		model.addAttribute("lstCategory", lstCategory);
+		
 		return "index";
 	}
 	/**
@@ -83,6 +84,12 @@ public class UserController {
 		model.addAttribute("lstCategory", lstCategory);
 		return "login";
 	}
+	@RequestMapping(value = "/logout", method = RequestMethod.POST)
+	public String logout(ModelMap model, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.removeAttribute("userName");
+		return "redirect:/index";
+	}
 
 	/**
 	 * hàm xử lý tác vụ đăng kí (kiểm tra email, password, phone)
@@ -106,8 +113,7 @@ public class UserController {
 			userService.insertUser(user); // đăng kí thành công => insert xuống database
 			HttpSession session = request.getSession();
 			session.setAttribute("userName", user.getName());
-			model.addAttribute("userName", user.getName());
-			return "loginsuccess";
+			return "redirect:/index";
 
 		}
 	}
@@ -135,8 +141,7 @@ public class UserController {
 			User userFind = userService.searchUserInDatabase(user);
 			HttpSession session = request.getSession();
 			session.setAttribute("userName", userFind.getName());
-			model.addAttribute("userName", userFind.getName());
-			return "loginsuccess";
+			return "redirect:/index";
 		}
 	}
 
