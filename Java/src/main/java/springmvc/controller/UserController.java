@@ -84,7 +84,7 @@ public class UserController {
 		model.addAttribute("lstCategory", lstCategory);
 		return "login";
 	}
-	@RequestMapping(value = "/logout", method = RequestMethod.POST)
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(ModelMap model, HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		session.removeAttribute("userName");
