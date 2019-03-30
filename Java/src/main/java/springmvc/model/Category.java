@@ -1,5 +1,6 @@
 package springmvc.model;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,8 +25,11 @@ public class Category {
 	@Column(name="description", columnDefinition = "TEXT")
 	private String description;
 	
-	@Column(name="image")
-	private String image;
+	@Column(name = "created_at")
+	private Date dateCreate;
+	
+	@Column(name = "updated_at")
+	private Date dateUpdate;
 	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "category")
 	private List<Product> listProduct = new ArrayList<Product>();
@@ -34,12 +38,14 @@ public class Category {
 		super();
 	}
 
-	public Category(int id, String name, String description, String image, List<Product> listProduct) {
+	public Category(int id, String name, String description, Date dateCreate, Date dateUpdate,
+			List<Product> listProduct) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
-		this.image = image;
+		this.dateCreate = dateCreate;
+		this.dateUpdate = dateUpdate;
 		this.listProduct = listProduct;
 	}
 
@@ -67,12 +73,20 @@ public class Category {
 		this.description = description;
 	}
 
-	public String getImage() {
-		return image;
+	public Date getDateCreate() {
+		return dateCreate;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setDateCreate(Date dateCreate) {
+		this.dateCreate = dateCreate;
+	}
+
+	public Date getDateUpdate() {
+		return dateUpdate;
+	}
+
+	public void setDateUpdate(Date dateUpdate) {
+		this.dateUpdate = dateUpdate;
 	}
 
 	public List<Product> getListProduct() {
@@ -82,6 +96,7 @@ public class Category {
 	public void setListProduct(List<Product> listProduct) {
 		this.listProduct = listProduct;
 	}
+
 	
 	
 }

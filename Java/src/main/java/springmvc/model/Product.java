@@ -1,5 +1,9 @@
 package springmvc.model;
 
+
+
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,6 +31,21 @@ public class Product {
 	@Column(name = "quantity")
 	private int quantity;
 	
+	@Column(name = "unit_price")
+	private double priceUnitProduct;
+	
+	@Column(name = "promotion_price")
+	private double pricePromotionProduct;
+	
+	@Column(name = "unit")
+	private String donVi;
+	
+	@Column(name = "created_at")
+	private Date dateCreate;
+	
+	@Column(name = "updated_at")
+	private Date dateUpdate;
+	
 	@ManyToOne
 	@JoinColumn(name = "id_type", nullable = false)
 	private Category category;
@@ -35,13 +54,19 @@ public class Product {
 		super();
 	}
 
-	public Product(int id, String name, String productDescription, String image, int quantity, Category category) {
+	public Product(int id, String name, String productDescription, String image, int quantity, double priceUnitProduct,
+			double pricePromotionProduct, String donVi, Date dateCreate, Date dateUpdate, Category category) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.productDescription = productDescription;
 		this.image = image;
 		this.quantity = quantity;
+		this.priceUnitProduct = priceUnitProduct;
+		this.pricePromotionProduct = pricePromotionProduct;
+		this.donVi = donVi;
+		this.dateCreate = dateCreate;
+		this.dateUpdate = dateUpdate;
 		this.category = category;
 	}
 
@@ -85,6 +110,46 @@ public class Product {
 		this.quantity = quantity;
 	}
 
+	public double getPriceUnitProduct() {
+		return priceUnitProduct;
+	}
+
+	public void setPriceUnitProduct(double priceUnitProduct) {
+		this.priceUnitProduct = priceUnitProduct;
+	}
+
+	public double getPricePromotionProduct() {
+		return pricePromotionProduct;
+	}
+
+	public void setPricePromotionProduct(double pricePromotionProduct) {
+		this.pricePromotionProduct = pricePromotionProduct;
+	}
+
+	public String getDonVi() {
+		return donVi;
+	}
+
+	public void setDonVi(String donVi) {
+		this.donVi = donVi;
+	}
+
+	public Date getDateCreate() {
+		return dateCreate;
+	}
+
+	public void setDateCreate(Date dateCreate) {
+		this.dateCreate = dateCreate;
+	}
+
+	public Date getDateUpdate() {
+		return dateUpdate;
+	}
+
+	public void setDateUpdate(Date dateUpdate) {
+		this.dateUpdate = dateUpdate;
+	}
+
 	public Category getCategory() {
 		return category;
 	}
@@ -92,5 +157,7 @@ public class Product {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+
+	
 	
 }

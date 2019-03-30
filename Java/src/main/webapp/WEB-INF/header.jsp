@@ -41,11 +41,6 @@
 						<li><a href="/BookWebMVC/logout">Đăng xuất</a></li>
 					</c:if>
 					<c:if test="${sessionScope.userName == null}">
-						<li>
-							<a href="#">
-								<i class="fas fa-user"></i>Tài khoản
-							</a>
-						</li>
 						<li><a href="/BookWebMVC/signup">Đăng kí</a></li>
 						<li><a href="/BookWebMVC/login">Đăng nhập</a></li>
 					</c:if>

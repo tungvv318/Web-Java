@@ -7,4 +7,5 @@ import springmvc.model.Product;
 
 public interface ProductRepository {
 	List<Category> getListCategory();
+	List<Product> getListProducts();
 }

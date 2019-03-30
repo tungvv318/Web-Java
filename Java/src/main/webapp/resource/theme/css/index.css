@@ -230,9 +230,13 @@ a{
 .product-name{
 	font-weight: 100;
 	margin-top: 10px;
+	font-size: 14px;
 }
+
 .product-price{
 	font-weight: 100;
+    margin-top: 3px;
+    font-size: initial;
 }
 .product-buy-detail{
 	margin-top: 10px;
