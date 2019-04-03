@@ -76,7 +76,7 @@ a{
   	text-decoration: inherit;
 }
 .header-top a:hover{
-	color: red;
+	color: black;
 }
 .header-mid{
 	margin: 30px 0 0px;
@@ -85,6 +85,18 @@ a{
 	width: 200px;
 	height: 78px;
 
+}
+#log-out{
+	border: none;
+	background: none;
+	cursor: pointer;
+	font-weight: 100;
+	color: inherit;
+	font-size: 13px;
+	outline: none;
+}
+#log-out:hover{
+	color: red;
 }
 .header-mid-right{
 	margin-left: auto;
