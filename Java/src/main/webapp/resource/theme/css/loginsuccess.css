@@ -113,6 +113,7 @@ a{
 	border: 1px solid #e1e1e1;
 	width: 190px;
 	padding: 0 12px;
+	outline: none;
 }
 .cart{
 	border: 1px solid #e1e1e1;
