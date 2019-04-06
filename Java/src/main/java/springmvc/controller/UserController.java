@@ -46,6 +46,14 @@ public class UserController {
 		model.addAttribute("lstProducts", lstProducts);
 		return "index";
 	}
+	@RequestMapping(value = "/product", method = RequestMethod.GET)
+	public String productPage(ModelMap model, HttpServletRequest request) {
+		List<Category> lstCategory = productService.getListCategory();
+		List<Product> lstProducts = productService.getListProducts();
+		model.addAttribute("lstCategory", lstCategory);
+		model.addAttribute("lstProducts", lstProducts);
+		return "product";
+	}
 	/**
 	 * hàm dùng để vào trang đăng kí
 	 * 
