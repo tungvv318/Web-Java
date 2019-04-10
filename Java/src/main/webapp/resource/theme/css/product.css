@@ -244,12 +244,20 @@ a{
 }
 .img-product-mini{
 	margin-right: 10px;
-	margin-top: 3px;
-
+    margin-top: 3px;
+    width: 56px;
+    height: 72px;	
+}
+.beta-name{
+	font-size: 13px;
 }
 .img-product-hero{
 	margin-right: 10px;
 	margin-top: 3px;
+}
+.img-product-hero img{
+	width: 270px;
+	height: 320px;
 }
 .product-name-hero{
 	font-weight: 100;
@@ -261,6 +269,14 @@ a{
 .product-info{
 	font-size: 15px;
 	margin-bottom: 30px;
+}
+.product-buy{
+	display: flex;
+}
+.product-buy p{
+	padding-top: 26px;
+    padding-left: 14px;
+    font-size: 14px;
 }
 .list-product{
 	height: 434.862px;
@@ -323,6 +339,7 @@ a{
 .product-name-related{
 	font-weight: 100;
 	margin-top: 10px;
+	font-size: 14px;
 }
 .product-price-related{
 	font-weight: 100;

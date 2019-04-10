@@ -8,17 +8,19 @@ import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.CriteriaSpecification;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import springmvc.model.Category;
 import springmvc.model.Product;
+
 @Repository
 @Transactional
-public class ProductRepositoryImpl implements ProductRepository{
+public class ProductRepositoryImpl implements ProductRepository {
 	@Autowired
 	private SessionFactory sessionFactory;
-	
+
 	@Override
 	public List<Category> getListCategory() {
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Category.class);
@@ -29,12 +31,25 @@ public class ProductRepositoryImpl implements ProductRepository{
 	}
 
 	@Override
-	public List<Product> getListProducts() {
+	public List<Product> getListProductsByTime() {
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Product.class);
 		criteria.addOrder(Order.desc("dateCreate"));
 		List<Product> products = criteria.list();
 		return products;
 	}
 
+	@Override
+	public Product getProductByID(int id) {
+		Product productForFindByID = (Product) sessionFactory.getCurrentSession().get(Product.class, id);
+		return productForFindByID;
+	}
+
+	@Override
+	public List<Product> getListProductsByCategory(Category categoryOfProductSelected) {
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Product.class);
+		criteria.add(Restrictions.eq("category", categoryOfProductSelected));
+		List<Product> product = criteria.list();
+		return product;
+	}
 
 }

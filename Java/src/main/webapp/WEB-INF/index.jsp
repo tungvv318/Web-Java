@@ -83,11 +83,6 @@
 							<c:forEach var="category" items="${lstCategory}">
 								<li class="sub-list">
 	  								<a href="#">${category.name} </a>
-	  								<%-- <ul class="sub-product">
-	  									<c:forEach var="product" items="${category.listProduct}">
-	  										<li><a href="#">${product.name}</a></li>
-	  									</c:forEach>
-	  								</ul> --%>
 	  							</li>		
 							</c:forEach>
 							</ul>
@@ -108,15 +103,15 @@
 				<h2 class="page-title">New Products</h2>
 			</div>
 			<div class="product-list">
-				<c:forEach var="product" items="${lstProducts}" begin = "0" end = "3">
+				<c:forEach var="product" items="${lstProductsByTime}" begin = "0" end = "3">
          			<div class="product-item">
-						<a href="#"><img src="<c:url value="${product.image}" />" class="img-product"></a>
+						<a href="/BookWebMVC/product?id=${product.id}"><img src="<c:url value="${product.image}" />" class="img-product"></a>
 						<div class="product-item-detail">
 							<div class="product-title"><h3 class="product-name">${product.name}</h3></div>	
 							<h5 class="product-price">${product.priceUnitProduct}${product.donVi}</h5>
 							<div class="product-buy-detail">
-								<a href="#" class="add-item-cart"><i class="fa fa-shopping-cart"></i></a>
-								<a href="#" class="item-detail">Details<i class="fa fa-chevron-right"></i></a>
+								<a href="/BookWebMVC/product?id=${product.id}" class="add-item-cart"><i class="fa fa-shopping-cart"></i></a>
+								<a href="/BookWebMVC/product?id=${product.id}" class="item-detail">Details<i class="fa fa-chevron-right"></i></a>
 							</div>
 						</div>
 					</div>	
@@ -129,30 +124,30 @@
 				<h2 class="page-title">Top Products</h2>
 			</div>
 			<div class="product-list">
-				<c:forEach var="product" items="${lstProducts}" begin = "4" end = "7">
+				<c:forEach var="product" items="${lstProductsByTime}" begin = "4" end = "7">
          			<div class="product-item">
-						<a href="#"><img src="<c:url value="${product.image}" />" class="img-product"></a>
+						<a href="/BookWebMVC/product?id=${product.id}"><img src="<c:url value="${product.image}" />" class="img-product"></a>
 						<div class="product-item-detail">
 							<div class="product-title"><h3 class="product-name">${product.name}</h3></div>	
 							<h5 class="product-price">${product.priceUnitProduct}${product.donVi}</h5>
 							<div class="product-buy-detail">
-								<a href="#" class="add-item-cart"><i class="fa fa-shopping-cart"></i></a>
-								<a href="#" class="item-detail">Details<i class="fa fa-chevron-right"></i></a>
+								<a href="/BookWebMVC/product?id=${product.id}" class="add-item-cart"><i class="fa fa-shopping-cart"></i></a>
+								<a href="/BookWebMVC/product?id=${product.id}" class="item-detail">Details<i class="fa fa-chevron-right"></i></a>
 							</div>
 						</div>
 					</div>	
      			 </c:forEach>
 			</div>
 			<div class="product-list">
-				<c:forEach var="product" items="${lstProducts}" begin = "8" end = "11">
+				<c:forEach var="product" items="${lstProductsByTime}" begin = "8" end = "11">
          			<div class="product-item">
-						<a href="#"><img src="<c:url value="${product.image}" />" class="img-product"></a>
+						<a href="/BookWebMVC/product?id=${product.id}"><img src="<c:url value="${product.image}" />" class="img-product"></a>
 						<div class="product-item-detail">
 							<div class="product-title"><h3 class="product-name">${product.name}</h3></div>	
 							<h5 class="product-price">${product.priceUnitProduct}${product.donVi}</h5>
 							<div class="product-buy-detail">
-								<a href="#" class="add-item-cart"><i class="fa fa-shopping-cart"></i></a>
-								<a href="#" class="item-detail">Details<i class="fa fa-chevron-right"></i></a>
+								<a href="/BookWebMVC/product?id=${product.id}" class="add-item-cart"><i class="fa fa-shopping-cart"></i></a>
+								<a href="/BookWebMVC/product?id=${product.id}" class="item-detail">Details<i class="fa fa-chevron-right"></i></a>
 							</div>
 						</div>
 					</div>	
