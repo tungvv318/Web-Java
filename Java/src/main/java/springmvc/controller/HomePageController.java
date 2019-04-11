@@ -30,6 +30,10 @@ public class HomePageController {
 		// lấy danh sách product theo thời gian từ mới nhất đến cũ nhất
 		List<Product> lstProductsByTime = productService.getListProductsByTime();
 		model.addAttribute("lstProductsByTime", lstProductsByTime);
+		
+		//lấy danh sách sản phẩm theo giá tăng dần
+		List<Product> lstProductByPrice = productService.getListProductByPrice();
+		model.addAttribute("lstProductByPrice", lstProductByPrice);
 		return "index";
 	}
 }

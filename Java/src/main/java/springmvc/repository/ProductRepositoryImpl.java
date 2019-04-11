@@ -34,8 +34,8 @@ public class ProductRepositoryImpl implements ProductRepository {
 	public List<Product> getListProductsByTime() {
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Product.class);
 		criteria.addOrder(Order.desc("dateCreate"));
-		List<Product> products = criteria.list();
-		return products;
+		List<Product> lstProductsByTime = criteria.list();
+		return lstProductsByTime;
 	}
 
 	@Override
@@ -48,8 +48,16 @@ public class ProductRepositoryImpl implements ProductRepository {
 	public List<Product> getListProductsByCategory(Category categoryOfProductSelected) {
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Product.class);
 		criteria.add(Restrictions.eq("category", categoryOfProductSelected));
-		List<Product> product = criteria.list();
-		return product;
+		List<Product> lstProductsByCategory = criteria.list();
+		return lstProductsByCategory;
+	}
+
+	@Override
+	public List<Product> getListProductByPrice() {
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Product.class);
+		criteria.addOrder(Order.asc("priceUnitProduct"));
+		List<Product> lstProductByPrice = criteria.list();
+		return lstProductByPrice;
 	}
 
 }

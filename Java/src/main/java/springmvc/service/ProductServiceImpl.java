@@ -34,4 +34,9 @@ public class ProductServiceImpl implements ProductService{
 		return productRepositoty.getListProductsByCategory(categoryOfProductSelected);
 	}
 
+	@Override
+	public List<Product> getListProductByPrice() {
+		return productRepositoty.getListProductByPrice();
+	}
+
 }

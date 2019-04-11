@@ -31,4 +31,11 @@ public interface ProductRepository {
 	 * @return
 	 */
 	List<Product> getListProductsByCategory(Category categoryOfProductSelected);
+	
+	/**
+	 * hàm dùng để lấy sản phẩm theo giá từ thấp đến cao
+	 * @return
+	 */
+	List<Product> getListProductByPrice();
+	
 }

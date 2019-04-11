@@ -226,7 +226,7 @@ a{
 	text-decoration: underline;
 }
 .page-control-item a{
-	color: inherit;
+	color: black;
 }
 .product-title{
 	display: flex;
