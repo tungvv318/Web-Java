@@ -39,8 +39,8 @@ public class ProductRepositoryImpl implements ProductRepository {
 	}
 
 	@Override
-	public Product getProductByID(int id) {
-		Product productForFindByID = (Product) sessionFactory.getCurrentSession().get(Product.class, id);
+	public Product getProductByID(int idProduct) {
+		Product productForFindByID = (Product) sessionFactory.getCurrentSession().get(Product.class, idProduct);
 		return productForFindByID;
 	}
 

@@ -2,8 +2,6 @@ package springmvc.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -12,17 +10,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import springmvc.model.Category;
 import springmvc.model.Product;
 import springmvc.service.ProductService;
-import springmvc.validator.UserFormValidator;
 
 @Controller
 public class HomePageController {
 	@Autowired
 	private ProductService productService;
 	
+	/**
+	 * hàm này dùng để vào trang chủ
+	 * @param model
+	 * @return: hiển thị file index.jsp
+	 */
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String homePage(ModelMap model, HttpServletRequest request) {
+	public String homePage(ModelMap model) {
+		// lấy danh sách thể loại dưới database
 		List<Category> lstCategory = productService.getListCategory();
 		model.addAttribute("lstCategory", lstCategory);
+		
+		// lấy danh sách product theo thời gian từ mới nhất đến cũ nhất
 		List<Product> lstProductsByTime = productService.getListProductsByTime();
 		model.addAttribute("lstProductsByTime", lstProductsByTime);
 		return "index";

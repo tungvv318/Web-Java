@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import springmvc.validator.UserFormValidator;
 import springmvc.model.Category;
-import springmvc.model.Product;
 import springmvc.model.User;
 import springmvc.service.ProductService;
 import springmvc.service.UserService;

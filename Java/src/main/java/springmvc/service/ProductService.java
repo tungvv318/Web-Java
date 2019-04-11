@@ -6,10 +6,29 @@ import springmvc.model.Category;
 import springmvc.model.Product;
 
 public interface ProductService {
+	/**
+	 * hàm dùng để lấy danh sách các thể loại sản phẩm ở dưới database
+	 * @return 
+	 */
 	List<Category> getListCategory();
+	
+	/**
+	 * hàm dùng để lấy danh sách sản phẩm ở dưới database theo thời gian mới nhất đến cũ nhất 
+	 * @return
+	 */
 	List<Product> getListProductsByTime();
-	Product getProductByID(int id);
-//	List<Product> getListProductsByCategory(int id_type);
-//	List<Product> getListProductsByCategory(Product productSelected);
+	
+	/**
+	 * hàm dùng để lấy sản phẩm ở dưới database theo id
+	 * @param idProduct
+	 * @return: product tìm được
+	 */
+	Product getProductByID(int idProduct);
+	
+	/**
+	 * hàm dùng để lấy danh sách sản phẩm ở dưới database theo thể loại
+	 * @param categoryOfProductSelected
+	 * @return
+	 */
 	List<Product> getListProductsByCategory(Category categoryOfProductSelected);
 }
