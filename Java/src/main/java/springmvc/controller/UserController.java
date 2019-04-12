@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import springmvc.validator.UserFormValidator;
+import springmvc.common.Encryption;
 import springmvc.model.Category;
 import springmvc.model.User;
 import springmvc.service.ProductService;
@@ -102,6 +103,12 @@ public class UserController {
 		if (result.hasErrors()) {
 			return "signup";
 		} else {
+			// mã hóa mật khẩu trước khi lưu xuống database
+			String passwordAfterHash = Encryption.hashPassword(user.getPassword());
+			String rePasswordAfterHash = Encryption.hashPassword(user.getRePassword());
+			// set lại mật khẩu cho user
+			user.setPassword(passwordAfterHash);
+			user.setRePassword(rePasswordAfterHash);
 			userService.insertUser(user); // đăng kí thành công => insert xuống database
 			HttpSession session = request.getSession();
 			session.setAttribute("userName", user.getName());
@@ -126,11 +133,16 @@ public class UserController {
 	@RequestMapping(value = "/formLogin", method = RequestMethod.POST)
 	public String handleLogin(@ModelAttribute("user") @Validated User user, BindingResult result, Model model,
 			HttpServletRequest request) {
+		/*
+		 * validate các điều kiện
+		 * - nếu thông tin sai thì UserFormValidator -> if(result.hasErrors())
+		 * - nếu thông tin đúng thì thực hiện lấy thông tin và cho đăng nhập
+		 */
 		if (result.hasErrors()) {
 			return "login";
 		} else {
-			// tìm user dưới database theo user ở trang đăng nhập
-			User userFind = userService.searchUserInDatabase(user);
+			// không chạy vào if ở trên => cho thỏa mãn yêu cầu đúng mật khẩu đúng email => chỉ cần getUser theo email thì chính là user đã đăng nhập thành công
+			User userFind = userService.searchUserByEmail(user.getEmail());
 			HttpSession session = request.getSession();
 			session.setAttribute("userName", userFind.getName());
 			return "redirect:/index";

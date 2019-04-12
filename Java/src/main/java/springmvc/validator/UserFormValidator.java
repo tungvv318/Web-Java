@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
+import springmvc.common.Encryption;
 import springmvc.model.User;
 import springmvc.service.UserService;
 
@@ -25,13 +26,13 @@ public class UserFormValidator implements Validator {
 	 */
 	private boolean checkPhone(String phone) {
 		// kiểm tra độ dài của phone
-		if (phone.length() != 10) { 
+		if (phone.length() != 10) {
 			return false;
 		} else {
 			for (int i = 0; i < phone.length(); i++) {
 				char check = phone.charAt(i);
 				// kiểm tra từng kí tự trong phone có phải là chữ hay không
-				if (!(check >= 48 && check <= 57)) { 
+				if (!(check >= 48 && check <= 57)) {
 					return false;
 				}
 			}
@@ -52,7 +53,7 @@ public class UserFormValidator implements Validator {
 		}
 		return true;
 	}
-			
+
 	public void validate(Object target, Errors errors) {
 		User user = (User) target;
 		/*
@@ -73,8 +74,18 @@ public class UserFormValidator implements Validator {
 				errors.rejectValue("email", "Empty.signup.email");
 			}
 		} else {
-			if (userService.searchUserInDatabase(user) == null) {
-				errors.rejectValue("email", "False.signup.email");
+			/*
+			 * kiểm tra email của user nhập vào có giống email của user nào dưới database ko?
+			 * - nếu có: kiểm tra tiếp mật khẩu có trùng mật khẩu dưới database không? (có thì cho đăng nhập, không thì thông báo)
+			 * - nếu không: thông báo là email nhập vào có thể sai hoặc không tồn tại
+			 */
+			User userInDatabase = userService.searchUserByEmail(user.getEmail());
+			if (userInDatabase != null) {
+				if (Encryption.checkPassAtferHash(user.getPassword(), userInDatabase.getPassword()) == false) {
+					errors.rejectValue("password", "False.login.password");
+				}
+			} else {
+				errors.rejectValue("email", "False.login.email");
 			}
 		}
 
