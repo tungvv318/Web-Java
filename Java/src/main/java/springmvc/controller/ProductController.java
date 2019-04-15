@@ -29,7 +29,7 @@ public class ProductController {
 		// id on url, is id of book selected and is id of book in database
 		
 		
-		// // lấy danh sách thể loại dưới database
+		// // lấy tên loại dưới database
 		List<Category> lstCategory = productService.getListCategory();
 		model.addAttribute("lstCategory", lstCategory);
 		

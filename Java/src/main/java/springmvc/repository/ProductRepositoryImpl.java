@@ -29,11 +29,20 @@ public class ProductRepositoryImpl implements ProductRepository {
 		List<Category> categories = criteria.list();
 		return categories;
 	}
+	
+	@Override
+	public Category getCategoryByID(int idCategory) {
+		Category categoryForFindByID = (Category) sessionFactory.getCurrentSession().get(Category.class, idCategory);
+		return categoryForFindByID;
+	}
 
+	
 	@Override
 	public List<Product> getListProductsByTime() {
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Product.class);
 		criteria.addOrder(Order.desc("dateCreate"));
+		criteria.setFirstResult(0);
+		criteria.setMaxResults(4);
 		List<Product> lstProductsByTime = criteria.list();
 		return lstProductsByTime;
 	}
@@ -48,6 +57,8 @@ public class ProductRepositoryImpl implements ProductRepository {
 	public List<Product> getListProductsByCategory(Category categoryOfProductSelected) {
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Product.class);
 		criteria.add(Restrictions.eq("category", categoryOfProductSelected));
+		criteria.setFirstResult(0);
+		criteria.setMaxResults(3);
 		List<Product> lstProductsByCategory = criteria.list();
 		return lstProductsByCategory;
 	}
@@ -56,8 +67,15 @@ public class ProductRepositoryImpl implements ProductRepository {
 	public List<Product> getListProductByPrice() {
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Product.class);
 		criteria.addOrder(Order.asc("priceUnitProduct"));
+		criteria.setFirstResult(0);
+		criteria.setMaxResults(8);
 		List<Product> lstProductByPrice = criteria.list();
 		return lstProductByPrice;
 	}
 
+
+
+	
+
+	
 }

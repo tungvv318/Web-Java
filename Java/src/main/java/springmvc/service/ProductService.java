@@ -12,6 +12,7 @@ public interface ProductService {
 	 */
 	List<Category> getListCategory();
 	
+	Category getCategoryByID(int idCategory);
 	/**
 	 * hàm dùng để lấy danh sách sản phẩm ở dưới database theo thời gian mới nhất đến cũ nhất 
 	 * @return

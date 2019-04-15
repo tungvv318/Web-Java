@@ -18,98 +18,102 @@
 </style>
 </head>
 <body>
-	<%@ include file="header.jsp" %>
-	<div class="content">
-		<div class="container">
-			<div class="clearfix">
-				<h2 class="page-title">Đăng Kí</h2>
-				<ul class="page-control">
-					<li class="page-control-item"><a href="/BookWebMVC/index">Home</a></li>
-					<li>Đăng kí</li>
-				</ul>
-			</div>
-			<form:form action="/BookWebMVC/formSignUp" method="POST" modelAttribute="user">
-				<table class="content-register">
-					<tr>
-						<td>
-							<h1 class="page-title">Đăng kí</h1>
-						</td>
-					</tr>
-					<tr>
-						<spring:bind path="email">
-							<div class="form-group ${status.error ? 'has-error' : ''}">
-								<td class="name-input">Email*</td>
-								<td>
-									<form:input path="email" type="email" cssClass="input-register" required="required"/>
-									<form:errors path="email" cssClass="has-error"/>
-								</td>
-							</div>	
-						</spring:bind>
-						
-						<%--  <td class="name-input">Email address*</td>
+    <div id="signupScreen">
+        <%@ include file="header.jsp" %>
+            <div class="content">
+                <div class="container">
+                    <div class="clearfix">
+                        <h2 class="page-title">Đăng Kí</h2>
+                        <ul class="page-control">
+                            <li class="page-control-item"><a href="/BookWebMVC/index">Home</a></li>
+                            <li>Đăng kí</li>
+                        </ul>
+                    </div>
+                    <form:form action="/BookWebMVC/formSignUp" method="POST" modelAttribute="user">
+                        <table class="content-register">
+                            <tr>
+                                <td>
+                                    <h1 class="page-title">Đăng kí</h1>
+                                </td>
+                            </tr>
+                            <tr>
+                                <spring:bind path="email">
+                                    <div class="form-group ${status.error ? 'has-error' : ''}">
+                                        <td class="name-input">Email*</td>
+                                        <td>
+                                            <form:input path="email" type="email" cssClass="input-register" required="required" />
+                                            <form:errors path="email" cssClass="has-error" />
+                                        </td>
+                                    </div>
+                                </spring:bind>
+
+                                <%--  <td class="name-input">Email address*</td>
 						<td>
 							<form:input path="email"  type="email"  cssClass="input-register" required="required"/>
-						</td> --%>	 				
-					</tr>
-					
-					<tr>
-						<td class="name-input">Fullname*</td>
-						<td>
-							<form:input path="name" cssClass="input-register" required="required"/>
-						</td>						
-					</tr>
-					<tr>
-						<td class="name-input">Address*</td>
-						<td><form:input path="address" cssClass="input-register" required="required"/></td>
-					</tr>
-					<tr>
-						<spring:bind path="phone">
-							<div class="form-group ${status.error ? 'has-error' : ''}">
-								<td class="name-input">Phone*</td>
-								<td>
-									<form:input path="phone" cssClass="input-register" required="required"/>
-									<form:errors path="phone" cssClass="has-error"/>
-								</td>
-							</div>	
-						</spring:bind>
-						<%-- <td class="name-input">Phone*</td>
+						</td> --%>
+                            </tr>
+
+                            <tr>
+                                <td class="name-input">Fullname*</td>
+                                <td>
+                                    <form:input path="name" cssClass="input-register" required="required" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="name-input">Address*</td>
+                                <td>
+                                    <form:input path="address" cssClass="input-register" required="required" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <spring:bind path="phone">
+                                    <div class="form-group ${status.error ? 'has-error' : ''}">
+                                        <td class="name-input">Phone*</td>
+                                        <td>
+                                            <form:input path="phone" cssClass="input-register" required="required" />
+                                            <form:errors path="phone" cssClass="has-error" />
+                                        </td>
+                                    </div>
+                                </spring:bind>
+                                <%-- <td class="name-input">Phone*</td>
 						<td><form:input path="phone" cssClass="input-register" required="required"/></td> --%>
-					</tr>
-					<tr>
-						<spring:bind path="password">
-							<div class="form-group ${status.error ? 'has-error' : ''}">
-								<td class="name-input">Password*</td>
-								<td>
-									<form:password path="password" cssClass="input-register" required="required"/>
-									<form:errors path="password" cssClass="has-error"/>
-								</td>
-							</div>	
-						</spring:bind>
-						<%-- <td class="name-input">Password*</td>
+                            </tr>
+                            <tr>
+                                <spring:bind path="password">
+                                    <div class="form-group ${status.error ? 'has-error' : ''}">
+                                        <td class="name-input">Password*</td>
+                                        <td>
+                                            <form:password path="password" cssClass="input-register" required="required" />
+                                            <form:errors path="password" cssClass="has-error" />
+                                        </td>
+                                    </div>
+                                </spring:bind>
+                                <%-- <td class="name-input">Password*</td>
 						<td><form:password path="password" cssClass="input-register" required="required"/></td> --%>
-					</tr>
-					<tr>
-						<spring:bind path="rePassword">
-							<div class="form-group ${status.error ? 'has-error' : ''}">
-								<td class="name-input">Re password*</td>
-								<td>
-									<form:password path="rePassword" cssClass="input-register" required="required"/>
-									<form:errors path="rePassword" cssClass="has-error"/>
-								</td>
-							</div>	
-						</spring:bind>
-						<%-- <td class="name-input">Re password*</td>
+                            </tr>
+                            <tr>
+                                <spring:bind path="rePassword">
+                                    <div class="form-group ${status.error ? 'has-error' : ''}">
+                                        <td class="name-input">Re password*</td>
+                                        <td>
+                                            <form:password path="rePassword" cssClass="input-register" required="required" />
+                                            <form:errors path="rePassword" cssClass="has-error" />
+                                        </td>
+                                    </div>
+                                </spring:bind>
+                                <%-- <td class="name-input">Re password*</td>
 						<td><form:password path="rePassword" cssClass="input-register" required="required"/></td> --%>
-					</tr>
-					<tr>
-						<td>
-							<input type="submit" value="Register" id="btn-register">
-						</td>
-					</tr>
-				</table>
-			</form:form>
-		</div>
-	</div>	
-	<%@ include file="footer.jsp" %>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="submit" value="Register" id="btn-register">
+                                </td>
+                            </tr>
+                        </table>
+                    </form:form>
+                </div>
+            </div>
+            <%@ include file="footer.jsp" %>
+    </div>
 </body>
 </html>
