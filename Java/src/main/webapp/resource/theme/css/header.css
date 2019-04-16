@@ -18,7 +18,7 @@ a{
 	text-decoration: none;
 }
 #headerScreen .container{
-	width: 1143px;
+	width: 1176px;
 	margin: 0 auto;
 }
 #headerScreen .container-flex{
@@ -101,6 +101,7 @@ a{
     border: none;
     background: none;
     cursor: pointer;
+    outline: none;
 }
 #headerScreen #form-search{
 	width: 218px;

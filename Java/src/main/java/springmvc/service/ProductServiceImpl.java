@@ -44,6 +44,11 @@ public class ProductServiceImpl implements ProductService{
 		return productRepositoty.getCategoryByID(idCategory);
 	}
 
+	@Override
+	public List<Product> getListProductByText(String keyword) {
+		return productRepositoty.getListProductByText(keyword);
+	}
+
 
 
 }

@@ -38,4 +38,6 @@ public interface ProductService {
 	 * @return
 	 */
 	List<Product> getListProductByPrice();
+	
+	List<Product> getListProductByText(String keyword);
 }

@@ -21,7 +21,7 @@ a{
 	color: inherit;
 }
 #categoryScreen .container{
-	width: 1143px;
+	width: 1176px;
 	margin: 0 auto;
 }
 #categoryScreen .container-flex{
@@ -197,7 +197,7 @@ a{
 
 /* content */
 #categoryScreen .content{
-	height: 1260px;
+	height: 1150px;
 }
 #categoryScreen .clearfix{
 	margin-top: 26px;
@@ -261,12 +261,10 @@ a{
 	margin-top: -30px;
 	margin-bottom: 30px;
 }
-#categoryScreen .product-list{
-	display: flex;
-	margin-bottom: 120px;
-}
 #categoryScreen .product-item{
-	margin-right: 25px;
+	padding-right: 30px;
+	float: left;
+	margin-bottom: 70px;
 }
 #categoryScreen .product-name{
 	font-weight: 100;

@@ -18,7 +18,7 @@ a{
 	text-decoration: none;
 }
 #indexScreen .container{
-	width: 1143px;
+	width: 1176px;
 	margin: 0 auto;
 }
 #indexScreen .container-flex{
@@ -217,15 +217,17 @@ a{
 	display: block;
 }
 /*code phần content*/
+#indexScreen .content{
+	height: 1530px;
+}
 #indexScreen .clearfix{
 	margin-top: 50px;
-}
-#indexScreen .product-list{
-	margin-top: 50px;
-	display: flex;
+	margin-bottom: 30px;
 }
 #indexScreen .product-item{
 	padding-right: 30px;
+	float: left;
+	margin-bottom: 70px;
 }
 
 #indexScreen .product-name{

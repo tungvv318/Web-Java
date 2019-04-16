@@ -40,4 +40,6 @@ public interface ProductRepository {
 	 */
 	List<Product> getListProductByPrice();
 	
+	
+	List<Product> getListProductByText(String keyword);
 }

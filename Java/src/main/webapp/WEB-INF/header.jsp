@@ -51,8 +51,8 @@
                     </div>
                     <div class="header-mid-right">
                         <div class="header-mid-margin">
-                            <form action="/" id="form-search">
-                                <input type="text" placeholder="Nhập từ khóa..." id="input-search">
+                            <form action="/BookWebMVC/search" id="form-search" >
+                                <input type="text" placeholder="Nhập từ khóa..." id="input-search" name="keyword">
                                 <button class="fa fa-search" type="submit" id="btn-search"></button>
                             </form>
                         </div>

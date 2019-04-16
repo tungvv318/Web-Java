@@ -12,6 +12,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+
 import springmvc.model.Category;
 import springmvc.model.Product;
 
@@ -71,6 +72,15 @@ public class ProductRepositoryImpl implements ProductRepository {
 		criteria.setMaxResults(8);
 		List<Product> lstProductByPrice = criteria.list();
 		return lstProductByPrice;
+	}
+
+	@Override
+	public List<Product> getListProductByText(String keyword) {
+
+		StringBuilder query = new StringBuilder("SELECT product FROM Product product WHERE product.name LIKE ");
+		query.append("'%" + keyword + "%'");
+		List<Product> lstProductAfterSearch = sessionFactory.getCurrentSession().createQuery(query.toString()).list();
+		return lstProductAfterSearch;
 	}
 
 

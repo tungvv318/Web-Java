@@ -36,4 +36,13 @@ public class HomePageController {
 		model.addAttribute("lstProductByPrice", lstProductByPrice);
 		return "index";
 	}
+	
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public String home(ModelMap model) {
+		// lấy danh sách thể loại dưới database
+		List<Category> lstCategory = productService.getListCategory();
+		model.addAttribute("lstCategory", lstCategory);
+		
+		return "product-find";
+	}
 }
