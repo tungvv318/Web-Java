@@ -93,7 +93,6 @@ a{
 	margin-left: auto;
 }
 #productFind .header-mid-margin{
-	margin-left: 7px;
 	float: left;
 }
 #productFind #btn-search{
@@ -117,7 +116,6 @@ a{
 	padding: 0 12px;
 }
 #productFind .cart{
-	border: 1px solid #e1e1e1;
     height: 37px;
     line-height: 37px;
     padding: 0 10px;

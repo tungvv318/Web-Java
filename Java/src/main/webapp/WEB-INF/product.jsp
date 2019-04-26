@@ -44,8 +44,19 @@
                                     </div>
 
                                     <div class="add-to-cart">
-                                        <a href="#" class="add-item-cart-related"><i class="fa fa-shopping-cart"></i></a>
-                                        <a href="#" class="buy-now">Mua ngay</a>
+                                    	<c:if test="${sessionScope.userName == null}">
+                                        	<a href="#" class="add-item-cart-related"><i class="fa fa-shopping-cart"></i></a>
+                                        </c:if>
+                                        <c:if test="${sessionScope.userName != null}">
+                                        	<a href="/BookWebMVC/add?id=${productSelected.id}" class="add-item-cart-related"><i class="fa fa-shopping-cart"></i></a>
+                                        </c:if>
+                                        
+                                        <c:if test="${sessionScope.userName == null}">
+                                        	<a href="#" class="buy-now">Mua ngay</a>
+                                        </c:if>
+                                        <c:if test="${sessionScope.userName != null}">
+                                        	<a href="/BookWebMVC/buynow?id=${productSelected.id}" class="buy-now">Mua ngay</a>
+                                        </c:if>
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +85,12 @@
                                             <h3 class="product-name-related">${product.name}</h3>
                                             <h5 class="product-price-related">${product.priceUnitProduct}${product.donVi}</h5>
                                             <div class="product-buy-detail-related">
-                                                <a href="/BookWebMVC/product?id=${product.id}" class="add-item-cart-related"><i class="fa fa-shopping-cart"></i></a>
+                                                <c:if test="${sessionScope.userName == null}">
+                                        			<a href="#" class="add-item-cart-related"><i class="fa fa-shopping-cart"></i></a>
+                                       			</c:if>
+                                        		<c:if test="${sessionScope.userName != null}">
+                                        			<a href="/BookWebMVC/add?id=${productSelected.id}" class="add-item-cart-related"><i class="fa fa-shopping-cart"></i></a>
+                                        		</c:if>
                                                 <a href="/BookWebMVC/product?id=${product.id}" class="item-detail-related">Details<i class="fa fa-chevron-right"></i></a>
                                             </div>
                                         </div>

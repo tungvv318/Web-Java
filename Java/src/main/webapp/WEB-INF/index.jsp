@@ -35,7 +35,7 @@
 							</div>
                             <h5 class="product-price">${productByTime.priceUnitProduct}${productByTime.donVi}</h5>
                             <div class="product-buy-detail">
-                            	<a href="/BookWebMVC/product?id=${productByTime.id}" class="add-item-cart"><i class="fa fa-shopping-cart"></i></a>
+                            	<a href="/BookWebMVC/add?id=${productByTime.id}" class="add-item-cart"><i class="fa fa-shopping-cart"></i></a>
                                	<a href="/BookWebMVC/product?id=${productByTime.id}" class="item-detail">Details<i class="fa fa-chevron-right"></i></a>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
 							</div>
                             <h5 class="product-price">${productByPrice.priceUnitProduct}${productByPrice.donVi}</h5>
                             <div class="product-buy-detail">
-                            	<a href="/BookWebMVC/product?id=${productByPrice.id}" class="add-item-cart"><i class="fa fa-shopping-cart"></i></a>
+                            	<a href="/BookWebMVC/add?id=${productByPrice.id}" class="add-item-cart"><i class="fa fa-shopping-cart"></i></a>
                                	<a href="/BookWebMVC/product?id=${productByPrice.id}" class="item-detail">Details<i class="fa fa-chevron-right"></i></a>
                             </div>
                         </div>

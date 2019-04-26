@@ -67,7 +67,7 @@ public class LoginController {
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(ModelMap model, HttpServletRequest request) {
 		HttpSession session = request.getSession();
-		session.removeAttribute("userName");
+		session.invalidate();
 		return "redirect:/index";
 	}
 

@@ -26,7 +26,7 @@
 							<h3 class="product-name">${productSearch.name}</h3>
                             <h5 class="product-price">${productSearch.priceUnitProduct}${productSearch.donVi}</h5>
                             <div class="product-buy-detail">
-                            	<a href="/BookWebMVC/product?id=${productSearch.id}" class="add-item-cart"><i class="fa fa-shopping-cart"></i></a>
+                            	<a href="/BookWebMVC/add?id=${productSearch.id}" class="add-item-cart"><i class="fa fa-shopping-cart"></i></a>
                                	<a href="/BookWebMVC/product?id=${productSearch.id}" class="item-detail">Details<i class="fa fa-chevron-right"></i></a>
                             </div>
                         </div>

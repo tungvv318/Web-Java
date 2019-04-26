@@ -19,7 +19,7 @@ public class ProductController {
 	private ProductService productService;
 	
 	/**
-	 * hàm dùng để chuyển hướng sang trang sản phẩm
+	 * hàm dùng để chuyển hướng sang trang 1 sản phẩm được chọn
 	 * @param model
 	 * @param id
 	 * @return: hiển thị file product.jsp
@@ -33,7 +33,7 @@ public class ProductController {
 		List<Category> lstCategory = productService.getListCategory();
 		model.addAttribute("lstCategory", lstCategory);
 		
-		// lấy product theo id để hiển thị sang page product
+		// lấy product theo id để hiển thị sang trang product được chọn
 		int idProductSelected = id;
 		Product productSelected = productService.getProductByID(idProductSelected);
 		model.addAttribute("productSelected", productSelected);

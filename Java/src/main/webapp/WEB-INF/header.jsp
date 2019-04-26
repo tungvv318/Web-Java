@@ -8,6 +8,7 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link href="<c:url value="/resource/css/header.css" />" rel="stylesheet">
+	<script src="<c:url value="/resource/js/show-cart.js" />"></script>
 </head>
 <body>
     <div id="headerScreen">
@@ -57,13 +58,43 @@
                             </form>
                         </div>
                         <div class="header-mid-margin">
-                            <div class="cart">
-                                <div class="cart-item">
-                                    <i class="fa fa-shopping-cart"></i> Giỏ hàng (Trống)
-                                    <i class="fa fa-chevron-down"></i>
-                                </div>
-                            </div>
-                        </div>
+							<div class="cart">
+								<div class="cart-item">
+									<div class="dropdown">
+										<i class="fa fa-shopping-cart"></i>
+										<c:if test="${sessionScope.userName == null}">
+											Giỏ hàng (Trống) 
+											<button class="dropbtn fa fa-chevron-down"></button>  
+										</c:if>
+										<c:if test="${sessionScope.userName != null}">
+											<c:if test="${sessionScope.sizeCart == 0}">
+												Giỏ hàng (Trống) 
+												<button class="dropbtn fa fa-chevron-down"></button>  
+											</c:if>
+											<c:if test="${sessionScope.sizeCart != 0}">
+												Giỏ hàng (${sessionScope.sizeCart}) 
+												<button onclick="myFunction()" class="dropbtn fa fa-chevron-down"></button>  
+												<div id="myDropdown" class="dropdown-content">
+													<c:forEach var="map" items="${sessionScope.myCartItems}">
+														<div class="item-in-cart">
+															<a href="/BookWebMVC/product?id=${map.value.product.id}" class="link-product"><img src="<c:url value="/resource/img/aaa.png" />" alt="book-img"></a>
+															<div class="detail-product-buy">
+																<span>${map.value.product.name}</span>
+																<span>${map.value.quantityBuy} x 
+																<span class="set-color">${map.value.product.priceUnitProduct}</span>
+																</span>
+															</div>
+														</div>
+													</c:forEach>
+													<p class="total-price">Tổng tiền: ${sessionScope.myCartTotal}$</p>
+													<a href="/BookWebMVC/checkout" class="buy-total">Xem Giỏ Hàng</a>
+												</div>
+											</c:if>	
+										</c:if>	
+									</div>
+								</div>
+							</div>
+						</div>
                     </div>
                 </div>
             </div>
