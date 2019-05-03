@@ -85,7 +85,7 @@ public class SignUpController {
 			user.setRePassword(rePasswordAfterHash);
 			userService.insertUser(user); // đăng kí thành công => insert xuống database
 			HttpSession session = request.getSession();
-			session.setAttribute("userName", user.getName());
+			session.setAttribute("user", user);
 			return "redirect:/index";
 
 		}

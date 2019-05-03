@@ -28,15 +28,15 @@
                         </li>
                     </ul>
                     <ul class="header-menu">
-                        <c:if test="${sessionScope.userName != null}">
+                        <c:if test="${sessionScope.user != null}">
                             <li>
                                 <a href="#">
-                                    <i class="fas fa-user"></i>${sessionScope.userName}
+                                    <i class="fas fa-user"></i>${sessionScope.user.name}
                                 </a>
                             </li>
                             <li><a href="/BookWebMVC/logout">Đăng xuất</a></li>
                         </c:if>
-                        <c:if test="${sessionScope.userName == null}">
+                        <c:if test="${sessionScope.user == null}">
                             <li><a href="/BookWebMVC/signup">Đăng kí</a></li>
                             <li><a href="/BookWebMVC/login">Đăng nhập</a></li>
                         </c:if>
@@ -62,27 +62,27 @@
 								<div class="cart-item">
 									<div class="dropdown">
 										<i class="fa fa-shopping-cart"></i>
-										<c:if test="${sessionScope.userName == null}">
+										<c:if test="${sessionScope.user == null}">
 											Giỏ hàng (Trống) 
 											<button class="dropbtn fa fa-chevron-down"></button>  
 										</c:if>
-										<c:if test="${sessionScope.userName != null}">
-											<c:if test="${sessionScope.sizeCart == 0}">
+										<c:if test="${sessionScope.user != null}">
+											<c:if test="${sessionScope.sizeCart == null}">
 												Giỏ hàng (Trống) 
 												<button class="dropbtn fa fa-chevron-down"></button>  
 											</c:if>
-											<c:if test="${sessionScope.sizeCart != 0}">
+											<c:if test="${sessionScope.sizeCart != null}">
 												Giỏ hàng (${sessionScope.sizeCart}) 
 												<button onclick="myFunction()" class="dropbtn fa fa-chevron-down"></button>  
 												<div id="myDropdown" class="dropdown-content">
 													<c:forEach var="map" items="${sessionScope.myCartItems}">
 														<div class="item-in-cart">
-															<a href="/BookWebMVC/product?id=${map.value.product.id}" class="link-product"><img src="<c:url value="/resource/img/aaa.png" />" alt="book-img"></a>
+															<a href="/BookWebMVC/product?id=${map.value.product.id}" class="link-product"><img src="<c:url value="${map.value.product.image}" />" alt="book-img"></a>
 															<div class="detail-product-buy">
-																<span>${map.value.product.name}</span>
-																<span>${map.value.quantityBuy} x 
-																<span class="set-color">${map.value.product.priceUnitProduct}</span>
-																</span>
+																<a href="/BookWebMVC/product?id=${map.value.product.id}"><p class="overide-line-height">${map.value.product.name}</p></a>
+																<p>${map.value.quantityBuy} x 
+																<span class="set-color">${map.value.product.priceUnitProduct}${map.value.product.donVi}</span>
+																</p>
 															</div>
 														</div>
 													</c:forEach>

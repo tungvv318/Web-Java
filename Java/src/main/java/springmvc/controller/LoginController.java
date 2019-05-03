@@ -99,7 +99,7 @@ public class LoginController {
 			// chỉ cần getUser theo email thì chính là user đã đăng nhập thành công
 			User userFind = userService.searchUserByEmail(user.getEmail());
 			HttpSession session = request.getSession();
-			session.setAttribute("userName", userFind.getName());
+			session.setAttribute("user", userFind);
 			return "redirect:/index";
 		}
 	}

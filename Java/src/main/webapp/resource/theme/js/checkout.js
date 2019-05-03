@@ -8,7 +8,7 @@ function setChange(optionChange){
 			quantity.value++;
 			// var price = Number(document.getElementById('don-gia'));
 			// var priceAll = Number(price*quantity.value);
-			document.getElementById('so-tien').innerHTML = quantity.value;
+//			document.getElementById('so-tien').innerHTML = quantity.value;
 		}
 	}
 	else {

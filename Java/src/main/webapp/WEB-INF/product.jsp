@@ -37,24 +37,24 @@
                                     <div class="product-buy">
                                         <div class="option-buy">
                                             <button class="button-config" id="reduce" onclick="setChange('reduce')"><i class="fas fa-minus"></i></button>
-                                            <input type="number" value="1" id="quantity">
+                                            <input type="number" value="1" min="1" max="${productSelected.quantity}"  oninput="validity.valid||(value='');" id="quantity">
                                             <button class="button-config" id="increase" onclick="setChange('increase')"><i class="fas fa-plus"></i></button>
                                         </div>
                                         <p>${productSelected.quantity} sản phẩm có sẵn</p>
                                     </div>
 
                                     <div class="add-to-cart">
-                                    	<c:if test="${sessionScope.userName == null}">
+                                    	<c:if test="${sessionScope.user == null}">
                                         	<a href="#" class="add-item-cart-related"><i class="fa fa-shopping-cart"></i></a>
                                         </c:if>
-                                        <c:if test="${sessionScope.userName != null}">
+                                        <c:if test="${sessionScope.user != null}">
                                         	<a href="/BookWebMVC/add?id=${productSelected.id}" class="add-item-cart-related"><i class="fa fa-shopping-cart"></i></a>
                                         </c:if>
                                         
-                                        <c:if test="${sessionScope.userName == null}">
+                                        <c:if test="${sessionScope.user == null}">
                                         	<a href="#" class="buy-now">Mua ngay</a>
                                         </c:if>
-                                        <c:if test="${sessionScope.userName != null}">
+                                        <c:if test="${sessionScope.user != null}">
                                         	<a href="/BookWebMVC/buynow?id=${productSelected.id}" class="buy-now">Mua ngay</a>
                                         </c:if>
                                     </div>

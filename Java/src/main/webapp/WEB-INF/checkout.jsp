@@ -10,7 +10,7 @@
     <title>Check out</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="<c:url value="/resource/css/checkout.css" />" rel="stylesheet">
-	<script src="<c:url value="/resource/js/js/checkout.js" />"></script>
+	<script src="<c:url value="/resource/js/checkout.js" />"></script>
 </head>
 
 <body>
@@ -48,12 +48,12 @@
 	                            <td>
 	                                <div class="option-buy">
 	                                    <button class="button-config" id="reduce" onclick="setChange('reduce')"><i class="fas fa-minus"></i></button>
-	                                    <input type="number" value="1" id="quantity" min="1" oninput="validity.valid||(value='');">
+	                                    <input type="number" value="${map.value.quantityBuy}" id="quantity" min="1" max="${map.value.product.quantity}" oninput="validity.valid||(value='');">
 	                                    <button class="button-config" id="increase" onclick="setChange('increase')"><i class="fas fa-plus"></i></button>
 	                                </div>
 	                            </td>
 	                            <td>
-	                                <span id="so-tien">${map.value.product.priceUnitProduct}</span>${map.value.product.donVi}
+	                                <span id="so-tien">${map.value.product.priceUnitProduct*map.value.quantityBuy}</span>${map.value.product.donVi}
 	                            </td>
 	                            <td>
 	                                <a href="/BookWebMVC/remove?id=${map.value.product.id}" id="delete-product-in-cart">Xóa</a>
@@ -72,18 +72,18 @@
                 	<table class="information-buyer">
 	                    <tr>
 	                        <td>Người nhận hàng:</td>
-	                        <td> ${sessionScope.userName}</td>
+	                        <td> ${sessionScope.user.name}</td>
 	                    </tr>
 	                    <tr>
 	                        <td class="name-input">Số điện thoại:</td>
 	                        <td>
-	                            <input type="number" class="input-login" required>
+	                            <input type="number" class="input-login" value = "${sessionScope.user.phone}" required>
 	                        </td>
 	                    </tr>
 	                    <tr>
 	                        <td class="name-input">Địa chỉ</td>
 	                        <td>
-	                            <input type="text" class="input-login" required>
+	                            <input type="text" class="input-login" value = "${sessionScope.user.address}" required>
 	                        </td>
 	                    </tr>
 	                    <tr>

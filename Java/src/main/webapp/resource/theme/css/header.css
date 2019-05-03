@@ -18,26 +18,43 @@ a{
 	text-decoration: none;
 }
 #headerScreen .detail-product-buy{
-	    margin-top: -78px;
     margin-left: 58px;
+}
+#headerScreen .link-product img{
+	width: 50px;
+	height: 50px;
+}
+#headerScreen .overide-line-height:hover {
+  overflow: visible;
 }
 #headerScreen .set-color{
 	color: #ee4d2d;
 }
-#headerScreen .item-in-cart span{
-	margin-right: 64px;
+
+#headerScreen .overide-line-height{
+    line-height: 20px;
+    white-space: nowrap; 
+    width: 200px; 
+    overflow: hidden;
+    text-overflow:ellipsis;
 }
-#headerScreen .link-product{
-	border-bottom: 1px solid #e1e1e1;
+#headerScreen .item-in-cart{
+	position: relative;
+    min-height: 65px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e1e1e1;
+}
+#headerScreen .detail-product-buy a{
+    color: inherit;
 }
 
 #headerScreen .total-price{
-	padding: 5px 0px 5px 125px;
+	padding: 5px 0px 5px 160px;
 	border-bottom: 1px solid #e1e1e1;
 }
 #headerScreen .buy-total{
 	margin: 16px 19px 16px 19px;
-    padding: 3px 10px 3px 44px;
+    padding: 3px 59px 3px 67px;
     text-decoration: none;
     display: block;
     border: 1px solid #e3e3e3;
@@ -65,7 +82,7 @@ a{
 	display: none;
 	position: absolute;
 	background-color: #fff;
-	min-width: 220px;
+	min-width: 240px;
 	overflow: auto;
 	padding: 0 30px 0 30px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -76,9 +93,10 @@ a{
 	color: black;
 	padding-top: 14px;
 	display: block;
+	position: absolute;
+    top: 0px;
 }
 
-#headerScreen .dropdown .link-product:hover {background-color: #ddd;}
 #headerScreen .show {
 	display: block;
 	right: -11px;
