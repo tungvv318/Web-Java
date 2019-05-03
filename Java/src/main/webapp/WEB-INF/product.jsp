@@ -48,14 +48,15 @@
                                         	<a href="#" class="add-item-cart-related"><i class="fa fa-shopping-cart"></i></a>
                                         </c:if>
                                         <c:if test="${sessionScope.user != null}">
-                                        	<a href="/BookWebMVC/add?id=${productSelected.id}" class="add-item-cart-related"><i class="fa fa-shopping-cart"></i></a>
+                                        	
+                                        	<a href="/BookWebMVC/add?id=${productSelected.id}" id="add-to-cart" onclick="setQuantity('addToCart')" class="add-item-cart-related"><i class="fa fa-shopping-cart"></i></a>
                                         </c:if>
                                         
                                         <c:if test="${sessionScope.user == null}">
                                         	<a href="#" class="buy-now">Mua ngay</a>
                                         </c:if>
                                         <c:if test="${sessionScope.user != null}">
-                                        	<a href="/BookWebMVC/buynow?id=${productSelected.id}" class="buy-now">Mua ngay</a>
+                                        	<a href="/BookWebMVC/buynow?id=${productSelected.id}" id="buy-more-product" onclick="setQuantity('buyMore')" class="buy-now">Mua ngay</a>
                                         </c:if>
                                     </div>
                                 </div>

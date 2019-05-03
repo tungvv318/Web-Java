@@ -67,11 +67,11 @@
 											<button class="dropbtn fa fa-chevron-down"></button>  
 										</c:if>
 										<c:if test="${sessionScope.user != null}">
-											<c:if test="${sessionScope.sizeCart == null}">
+											<c:if test="${sessionScope.sizeCart == null || sessionScope.myCartNum == 0}">
 												Giỏ hàng (Trống) 
 												<button class="dropbtn fa fa-chevron-down"></button>  
 											</c:if>
-											<c:if test="${sessionScope.sizeCart != null}">
+											<c:if test="${sessionScope.sizeCart != null && sessionScope.myCartNum != 0}">
 												Giỏ hàng (${sessionScope.sizeCart}) 
 												<button onclick="myFunction()" class="dropbtn fa fa-chevron-down"></button>  
 												<div id="myDropdown" class="dropdown-content">

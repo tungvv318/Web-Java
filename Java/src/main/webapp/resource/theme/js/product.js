@@ -17,6 +17,17 @@ function setChange(optionChange){
 		}
 	}
 }
+function setQuantity(choose){
+	var quantityProductBuy = document.getElementById("quantity").value;
+	if(choose == 'addToCart'){
+		var hrefOfTagA = document.getElementById("add-to-cart").href;
+		document.getElementById("add-to-cart").href = hrefOfTagA + "&quantityBuy=" + quantityProductBuy;
+	}
+	if(choose == 'buyMore'){
+		var hrefOfTagA = document.getElementById("buy-more-product").href;
+		document.getElementById("buy-more-product").href = hrefOfTagA + "&quantityBuy=" + quantityProductBuy;
+	}
+}
 function openAction(evt, actionName) {
 
   var i, tabcontent, tablinks;

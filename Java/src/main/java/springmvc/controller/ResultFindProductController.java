@@ -18,6 +18,12 @@ public class ResultFindProductController {
 	@Autowired
 	private ProductService productService;
 	
+	/**
+	 * hàm dùng để hiển thị trang kết quả tìm kiếm
+	 * @param model
+	 * @param keyword
+	 * @return
+	 */
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String searchProductByText(ModelMap model, @RequestParam String keyword) {
 		// // lấy tên loại dưới database

@@ -18,6 +18,13 @@ public class CategoryController {
 	@Autowired
 	private ProductService productService;
 
+	
+	/**
+	 * hàm dùng để hiển thị trang thể loại sản phẩm
+	 * @param model
+	 * @param idCategory là id của thể sách
+	 * @return
+	 */
 	@RequestMapping(value = "/category", method = RequestMethod.GET)
 	public String productPage(ModelMap model, @RequestParam(required = false) Integer idCategory) {
 		model.addAttribute("idCategory", idCategory);
