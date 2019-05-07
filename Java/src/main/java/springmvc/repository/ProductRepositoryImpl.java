@@ -41,7 +41,7 @@ public class ProductRepositoryImpl implements ProductRepository {
 	@Override
 	public List<Product> getListProductsByTime() {
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Product.class);
-		criteria.addOrder(Order.desc("dateCreate"));
+		criteria.addOrder(Order.asc("id"));
 		criteria.setFirstResult(0);
 		criteria.setMaxResults(4);
 		List<Product> lstProductsByTime = criteria.list();
@@ -81,6 +81,13 @@ public class ProductRepositoryImpl implements ProductRepository {
 		query.append("'%" + keyword + "%'");
 		List<Product> lstProductAfterSearch = sessionFactory.getCurrentSession().createQuery(query.toString()).list();
 		return lstProductAfterSearch;
+	}
+
+	@Override
+	public List<Product> getAllProduct() {
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Product.class);
+		List<Product> list = criteria.list();
+		return list;
 	}
 
 

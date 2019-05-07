@@ -5,7 +5,9 @@ import java.util.List;
 import springmvc.model.Category;
 import springmvc.model.Product;
 
+
 public interface ProductRepository {
+	List<Product> getAllProduct();
 	/**
 	 * hàm dùng để lấy danh sách các thể loại sản phẩm ở dưới database
 	 * 

@@ -44,10 +44,6 @@
                                         </td>
                                     </div>
                                 </spring:bind>
-                                <!-- <td class="name-input">Email address*</td>
-						<td>
-							<input type="Email" class="input-login" name="emailUser" required/>
-						</td> -->
                             </tr>
                             <tr>
                                 <spring:bind path="password">
@@ -59,10 +55,6 @@
                                         </td>
                                     </div>
                                 </spring:bind>
-                                <!-- <td class="name-input">Password*</td>
-						<td>
-							<input type="Password" class="input-login" name="passwordUser" required/>
-						</td> -->
                             </tr>
                             <tr>
                                 <td>

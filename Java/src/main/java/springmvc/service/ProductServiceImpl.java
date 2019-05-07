@@ -49,6 +49,11 @@ public class ProductServiceImpl implements ProductService{
 		return productRepositoty.getListProductByText(keyword);
 	}
 
+	@Override
+	public List<Product> getAllProduct() {
+		return productRepositoty.getAllProduct();
+	}
+
 
 
 }

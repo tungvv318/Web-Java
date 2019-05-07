@@ -32,7 +32,6 @@
                                 <div class="title-product">
                                     <h3 class="product-name-hero">${productSelected.name}</h3>
                                     <h5 class="product-price">${productSelected.priceUnitProduct}${productSelected.donVi}</h5>
-                                    <p class="product-info">${productSelected.productDescription}</p>
                                     <p>Số lượng:</p>
                                     <div class="product-buy">
                                         <div class="option-buy">
@@ -63,8 +62,8 @@
                             </div>
                             <div class="description-reviews">
                                 <div class="tab">
-                                    <button class="tablinks" onclick="openAction(event, 'description')" id="defaultOpen">Description</button>
-                                    <button class="tablinks" onclick="openAction(event, 'reviews')">Reviews</button>
+                                    <button class="tablinks" onclick="openAction(event, 'description')" id="defaultOpen">Mô tả</button>
+                                    <button class="tablinks" onclick="openAction(event, 'reviews')">Đánh giá</button>
                                 </div>
 
                                 <div id="description" class="tabcontent">
@@ -72,7 +71,7 @@
                                 </div>
 
                                 <div id="reviews" class="tabcontent">
-                                    <p>No Reviews</p>
+                                    <p>Hay</p>
                                 </div>
                             </div>
                             <div class="clearfix">
@@ -100,22 +99,6 @@
                             </div>
                         </div>
                         <div class="content-right">
-                            <div class="list-product">
-                                <h3 class="list-product-title">Best Sellers</h3>
-                                <div class="list-product-body">
-                                    <c:forEach begin="0" end="3">
-                                        <div class="product-item-mini">
-                                            <a class="img-product-item" href="#">
-											<img src="<c:url value="/resource/img/product-mini.png" />" alt="img-product" class="img-product-mini">
-									</a>
-                                            <div class="media-body">
-                                                <p class="beta-name">Sample Woman Top</p>
-                                                <span class="beta-sales-price">$34.55</span>
-                                            </div>
-                                        </div>
-                                    </c:forEach>
-                                </div>
-                            </div>
                             <div class="list-product">
                                 <h3 class="list-product-title">New Products</h3>
                                 <div class="list-product-body">

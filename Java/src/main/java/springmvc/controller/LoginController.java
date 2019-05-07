@@ -70,6 +70,7 @@ public class LoginController {
 		session.invalidate();
 		return "redirect:/index";
 	}
+	
 
 	/**
 	 * hàm xử lý tác vụ đăng nhập (kiểm tra email, password)
